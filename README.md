@@ -1,47 +1,107 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19707209&assignment_repo_type=AssignmentRepo)
+
 # MongoDB Fundamentals Assignment
 
-This assignment focuses on learning MongoDB fundamentals including setup, CRUD operations, advanced queries, aggregation pipelines, and indexing.
+## Overview
 
-## Assignment Overview
+This project demonstrates the use of MongoDB for performing:
 
-You will:
-1. Set up a MongoDB database
-2. Perform basic CRUD operations
-3. Write advanced queries with filtering, projection, and sorting
-4. Create aggregation pipelines for data analysis
-5. Implement indexing for performance optimization
+- CRUD operations
+- Advanced queries
+- Aggregation pipelines
+- Index creation
+- Performance analysis with `explain()`
 
-## Getting Started
+---
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
+## Tools Used
 
-## Files Included
+- **MongoDB**: Community Edition (local installation)
+- **MongoDB Shell (`mongosh`)**: Used via PowerShell
+- **MongoDB Compass**: Used for aggregation pipelines and index creation
+- **Node.js**: For running the `insert_books.js` script (optional)
 
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
+---
 
-## Requirements
+## How to Set Up and Run the Scripts
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
+### 1. Clone the Repository
 
-## Submission
+```bash
+git clone <your-github-repo-url>
+cd <your-repo-name>
+2. Start MongoDB
+Ensure MongoDB is running on your local machine at:
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+arduino
+Copy
+Edit
 
-1. Complete all tasks in the assignment
-2. Add your `queries.js` file with all required MongoDB queries
-3. Include a screenshot of your MongoDB database
-4. Update the README.md with your specific setup instructions
+mongodb://localhost:27017
+If you're using MongoDB Atlas, update the URI accordingly.
 
-## Resources
+3. Insert Sample Data
+You can insert the sample book data using one of the following methods:
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+Option A: Using MongoDB Shell (Recommended)
+In PowerShell, run:
+
+bash
+Copy
+Edit
+
+mongosh < insert_books.js
+This will insert data into a collection called books.
+
+Option B: Manually in Compass
+Open MongoDB Compass
+
+Create a database (e.g., bookstore)
+
+Create a collection (e.g., books)
+
+Paste the array of book documents from insert_books.js and insert them
+
+How to Run the Queries
+All MongoDB queries are inside the queries.js file.
+
+Steps:
+Open PowerShell and run:
+
+bash
+Copy
+Edit
+
+mongosh
+Switch to your database:
+
+js
+Copy
+Edit
+
+use bookstore
+Run queries manually from queries.js by copying and pasting them into the shell.
+
+For aggregation and indexing, open MongoDB Compass, navigate to your books collection, and:
+
+Use the Aggregation tab to run the aggregation pipeline
+
+Use the Indexes tab to create indexes
+
+Use Explain Plan to compare query performance before and after indexing
+
+File Descriptions
+File	Purpose
+insert_books.js	Populates the books collection with sample data
+queries.js	All MongoDB queries: CRUD, advanced queries, aggregation, indexing
+README.md	Full documentation and setup instructions
+screenshots/	Folder with proof screenshots (Compass views, pipeline, indexes)
+
+Included Screenshots (in /screenshots)
+books_collection.png – Data visible in Compass
+
+indexes_tab.png – Shows created indexes
+
+aggregation_pipeline.png – Aggregation pipeline setup and result
+
+explain_output.png – Explain plan results before and after indexing
+
